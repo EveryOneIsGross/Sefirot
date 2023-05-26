@@ -1,6 +1,6 @@
-![ToL_diagram](https://github.com/EveryOneIsGross/Sefira/assets/23621140/12184a14-3629-4887-ace3-f40268e97dbf)
-
 This project is a chain of thought chatbot that uses the OpenAI API and the concept of sefira on the Tree of Life to generate answers and an enriched summarised reflection for any question. A sefira is one of the 10 attributes or emanations of God in Kabbalah, a form of Jewish mysticism. The chatbot automatically traverses the tree of life asking the same question of each sefirot seeking answers based on their worldview and temprement. Ultimately it reflects on the path taken and uses pyttsx3, a text-to-speech library, to speak the final reflection taking all perspectives into consideration with their answer.
+
+![ToL_diagram](https://github.com/EveryOneIsGross/Sefira/assets/23621140/12184a14-3629-4887-ace3-f40268e97dbf)
 
 ## Relation to Tree of Thought
 
