@@ -44,11 +44,11 @@ This is very much just a proof of concept that renders ok results and illustrate
 
 ❌ Understand what I am doing
 
-❌ Refine Sefirot's temprement, colour, output
+❌ Refine individual Sefira temprement, colour, output
 
-❌ Create a better pathfinding logic when choosing best Sefirot to consult next
+❌ Create a better pathfinding logic when choosing best Sefira to consult next
 
-❌ Add more tools such as longterm memory for each Sefirot
+❌ Add more tools such as longterm memory for Sefirot
 
 ❌ Improve UI.. make one
 
