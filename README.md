@@ -1,6 +1,4 @@
-This project is a chain of thought chatbot that uses the OpenAI API and the concept of sefira to generate answers and reflections for any question. A sefira is one of the 10 attributes or emanations of God in Kabbalah, a form of Jewish mysticism1. The chatbot can traverse the tree of sefirot and answer questions based on the worldview of each sefira.
-
-It also uses pyttsx3, a text-to-speech library, to speak the final reflection.
+This project is a chain of thought chatbot that uses the OpenAI API and the concept of sefira to generate answers and reflections for any question. A sefira is one of the 10 attributes or emanations of God in Kabbalah, a form of Jewish mysticism. The chatbot can traverse the tree of sefirot and answer questions based on the worldview of each sefira. Ultimately it reflects on the path taken and uses pyttsx3, a text-to-speech library, to speak the final reflection.
 
 ## Relation to Tree of Thought Chain
 
