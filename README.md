@@ -38,12 +38,12 @@ This is very much just a proof of concept that renders ok results and illustrate
 
 ## To do
 
-x Create a framework of the concept
-x Implement a version that walks the path and generates a final reflection
-- Understand what I am doing
-- Refine Sefirot's temprement, colour, output
-- Create a better pathfinding logic when choosing best Sefirot to consult next
-- Add more tools such as longterm memory for each Sefirot
-- Improve UI.. make one
+✅ Create a framework of the concept
+✅ Implement a version that walks the path and generates a final reflection
+❌ Understand what I am doing
+❌ Refine Sefirot's temprement, colour, output
+❌ Create a better pathfinding logic when choosing best Sefirot to consult next
+❌ Add more tools such as longterm memory for each Sefirot
+❌ Improve UI.. make one
 
 
