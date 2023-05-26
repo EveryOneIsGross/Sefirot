@@ -52,6 +52,8 @@ This is very much just a proof of concept that renders ok results and illustrate
 
 ❌ Improve UI.. make one
 
+✅ Have the final reflection spoken and record it locally as an mp3 for using in your massive drops.
+
 
 
 
