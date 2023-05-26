@@ -31,3 +31,19 @@ You also need to have an OpenAI API key. 💅
 ## Usage
 
 To use this project, you need to enter your OpenAI API key when prompted. Then, you can enter any question you want to ask the chatbot. The chatbot will start at Malkuth, the lowest sefira, and traverse the tree of sefirot until it reaches Keter, the highest sefira. It will generate an answer and a clarification for each sefira, and a final reflection based on all the answers. It will also speak the final reflection using text-to-speech.
+
+## Current Implementation
+
+This is very much just a proof of concept that renders ok results and illustrates the concept. Alot of the logic on pathfinding is a placeholder or just messy. Also the prompts and descriptions of the Sefirot are not refined for better output. 
+
+## To do
+
+x Create a framework of the concept
+x Implement a version that walks the path and generates a final reflection
+- Understand what I am doing
+- Refine Sefirot's temprement, colour, output
+- Create a better pathfinding logic when choosing best Sefirot to consult next
+- Add more tools such as longterm memory for each Sefirot
+- Improve UI.. make one
+
+
