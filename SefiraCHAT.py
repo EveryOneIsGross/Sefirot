@@ -146,8 +146,8 @@ class ChatbotAgent:
             elif self.current_sefira.position == "Right":
                 rules.append("Prioritise the community.")
 
-            # Add a rule to avoid writing steps or lists
-            rules.append("Avoid writing steps or lists in the answer. Embody {self.current_sefira.attribute} emotionally. Don't repeat or define yourself.")
+            # Add a rule to avoid writing steps or lists, add ideals and emotions, avoid refering to themselves
+            rules.append("Avoid writing steps or lists in the answer. Embody {self.current_sefira.attribute} emotionally and idealogically. Don't repeat or refer to yourself.")
 
             # Retrieve the sefira's defined rule
             rule = self.definitions.get(self.current_sefira.name, "")
@@ -217,10 +217,10 @@ most_walked_path = chatbot_agent.path_counts.most_common(1)[0][0]
 
 # Generate final reflection
 answers_combined = "\n\n".join(final_answers)
-answers_summary = f"Upon reflection on the answers provided by the Sefirot, the following insights were unveiled:\n{answers_combined}"
+answers_summary = f"Upon reflection on the answers the following insights were unveiled:\n{answers_combined}"
 
 # Include the initial question and the most walked path in the reflection prompt
-reflection_prompt = f"In light of the revelations yielded from the question '{user_question}' and our journey predominantly through the {most_walked_path} path, what wisdom {answers_summary} can be drawn? Please note: do not write in list format and do not refer to yourself."
+reflection_prompt = f"Reflecting '{user_question}' on our journey through the {most_walked_path} path, what wisdom {answers_summary} can be drawn? Please note: do not write in list format and do not refer to yourself."
 
 reflection_response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
