@@ -16,9 +16,9 @@ pyttsx3
 collections
 
 You can install them using pip:
-(`
-pip install openai random pyttsx3 collections
-)
+
+  pip install openai random pyttsx3 collections
+
 You also need to have an OpenAI API key.
 
 ## Usage
