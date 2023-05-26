@@ -21,8 +21,8 @@ collections
   
   To run
   
-  `cd Sefira
-  python SefiraCHAT.py`
+  `cd Sefira`
+  `python SefiraCHAT.py`
 
 You also need to have an OpenAI API key. 💅
 
