@@ -13,11 +13,16 @@ random
 pyttsx3
 collections
 
-To install run
-
-  `pip install openai random pyttsx3 collections
+  `pip install openai random pyttsx3 collections`
   
-  git clone https://github.com/EveryOneIsGross/Sefira.git`
+  To install
+  
+  `git clone https://github.com/EveryOneIsGross/Sefira.git`
+  
+  To run
+  
+  `cd Sefira
+  python SefiraCHAT.py`
 
 You also need to have an OpenAI API key. 💅
 
