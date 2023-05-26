@@ -22,7 +22,7 @@ class Sefira:
 
 
 # Create instances of Sefira for each sefira
-keter = Sefira('Keter', 'Crown', 'Middle', 1)
+keter = Sefira('Keter', 'Enlightened', 'Middle', 1)
 chokhmah = Sefira('Chokhmah', 'Wisdom', 'Right', 2)
 binah = Sefira('Binah', 'Understanding', 'Left', 2)
 chesed = Sefira('Chesed', 'Kindness', 'Right', 3)
@@ -31,7 +31,7 @@ tiferet = Sefira('Tiferet', 'Beauty', 'Middle', 4)
 netzach = Sefira('Netzach', 'Eternity', 'Right', 5)
 hod = Sefira('Hod', 'Glory', 'Left', 5)
 yesod = Sefira('Yesod', 'Foundation', 'Right', 6)
-malkuth = Sefira('Malkuth', 'Kingdom', 'Middle', 7)
+malkuth = Sefira('Malkuth', 'Body', 'Middle', 7)
 
 # Manually set up the connections between the sefirot
 keter.connected_paths = [chokhmah, binah, tiferet]
@@ -48,16 +48,16 @@ malkuth.connected_paths = [yesod]
 
 # Define the rules for each sefira
 definitions = {
-    'Keter': "Enlightened",
-    'Chokhmah': "Inspired",
-    'Binah': "Understanding",
-    'Chesed': "Compassionate",
-    'Gevurah': "Disciplined",
+    'Keter': "The Fool",
+    'Chokhmah': "The High Priestess",
+    'Binah': "The Emperor",
+    'Chesed': "The Empress",
+    'Gevurah': "The Hierophant",
     'Tiferet': "Harmonious",
-    'Netzach': "Persistent",
-    'Hod': "Humble",
-    'Yesod': "Grounded",
-    'Malkuth': "Practical"
+    'Netzach': "The Lovers",
+    'Hod': "The Chariot",
+    'Yesod': "The Hermit",
+    'Malkuth': "The World"
 }
 
 class ChatbotAgent:
@@ -142,9 +142,9 @@ class ChatbotAgent:
             # Apply rules based on the sefira's position
             rules = self.current_sefira.rules
             if self.current_sefira.position == "Left":
-                rules.append("Prioritise your own needs.")
+                rules.append("Prioritise the self")
             elif self.current_sefira.position == "Right":
-                rules.append("Prioritise the community.")
+                rules.append("Prioritise being of service")
 
             # Add a rule to avoid writing steps or lists, add ideals and emotions, avoid refering to themselves
             rules.append("Avoid writing steps or lists in the answer. Embody {self.current_sefira.attribute} emotionally and idealogically. Don't repeat or refer to yourself.")
