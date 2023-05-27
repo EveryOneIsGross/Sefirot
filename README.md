@@ -30,11 +30,11 @@ You also need to have an OpenAI API key. 💅
 
 ## Usage
 
-To use this project, you need to enter your OpenAI API key when prompted. Then, you can enter any question you want to ask the chatbot. The chatbot will start at Malkuth, the lowest sefira, and traverse the tree of sefirot until it reaches Keter, the highest sefira. It will generate an answer and a clarification for each sefira, and a final reflection based on all the answers. It will also speak the final reflection using text-to-speech.
+You will be prompted to enter your OpenAI API key. Then you'll be able to provide a question or task. Using the text-davinci-003 model your question will start at Malkuth, and traverse the ToL with gpt-3.5-turbo now choosing the appropriate Sefira to question. After prompting Keter, a new agent will summarise and look for insights from each sefira, ending with a final reflection using the gpt-3.5-turbo model providing it's final answer.
 
 ## Current Implementation
 
-This is very much just a proof of concept that renders ok results and illustrates the concept. Alot of the logic on pathfinding is a placeholder or just messy. Also the prompts and descriptions of the Sefirot are not well defined. 
+This is very much just a proof of concept that renders ok results and illustrates the concept. Alot of the logic on pathfinding is a placeholder or just messy. Also the prompts and descriptions of the Sefirot are not yet well defined. 
 
 ## To do
 
