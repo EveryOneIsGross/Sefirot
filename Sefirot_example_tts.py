@@ -2,6 +2,7 @@ import time
 import os
 import openai
 import random
+import pyttsx3
 from collections import Counter
 
 # Prompt the user for the OpenAI API key
@@ -210,7 +211,7 @@ reflection_prompt = f"Reflecting '{user_question}' on our journey through the {m
 
 reflection_response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
-    messages=[{"role": "system", "content": "You are an insightful assistant."}, {"role": "user", "content": reflection_prompt }],
+    messages=[{"role": "system", "content": "You are a wise and insightful assistant."}, {"role": "user", "content": reflection_prompt }],
     temperature=0.5,
     max_tokens=300,
     top_p=1,
@@ -218,11 +219,68 @@ reflection_response = openai.ChatCompletion.create(
     presence_penalty=0.6,
 )
 time.sleep(1) # pause for 1 second
-
 reflection = reflection_response.choices[0].message.content.strip()
 
 final_summary = f"{answers_summary}\n\nReflection:\n{reflection}"
 
+# print("Summary of Answers:")
+# print(answers_summary)
+# print("-----------------------------------------")
 print("Reflection:")
 print(reflection)
 print("-----------------------------------------")
+
+engine = pyttsx3.init()
+text = reflection
+engine.setProperty("rate", 150) # Speed percent (can go over 100)
+engine.setProperty("volume", 0.8) # Volume 0-1
+voices = engine.getProperty("voices")
+engine.setProperty("voice", voices[1].id)
+file_name = user_question + ".mp3" # you can change the extension as you like
+engine.save_to_file(text, file_name)
+engine.say(text)
+engine.runAndWait()
+
+# Create a dictionary of sefira names and rate values
+sefira_rates = {
+    "Keter": 130,
+    "Chokhmah": 120,
+    "Binah": 130,
+    "Chesed": 142,
+    "Gevurah": 150,
+    "Tiferet": 130,
+    "Netzach": 180,
+    "Hod": 170,
+    "Yesod": 160,
+    "Malkuth": 190
+}
+
+# Create a dictionary of sefira names and voice ids
+sefira_voices = {
+    "Keter": voices[0].id,
+    "Chokhmah": voices[1].id,
+    "Binah": voices[0].id,
+    "Chesed": voices[0].id,
+    "Gevurah": voices[1].id,
+    "Tiferet": voices[1].id,
+    "Netzach": voices[0].id,
+    "Hod": voices[0].id,
+    "Yesod": voices[1].id,
+    "Malkuth": voices[0].id
+}
+
+# Loop through the responses list, which contains the sefira name and answer for each step
+for sefira_name, answer in chatbot_agent.responses:
+    # Generate a summary for each sefira state
+    summary = f"{answer}"
+    
+    # Set the voice and rate according to the sefira name
+    engine.setProperty("voice", sefira_voices[sefira_name])
+    engine.setProperty("rate", sefira_rates[sefira_name])
+    
+    # Save and play the summary as an mp3 file with sefira name and user question as file name
+    file_name = f"{sefira_name}_{user_question}.mp3"
+    engine.save_to_file(summary, file_name)
+    engine.runAndWait()
+
+
