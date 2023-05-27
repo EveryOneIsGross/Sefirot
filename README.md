@@ -30,7 +30,7 @@ You also need to have an OpenAI API key. 💅
 
 ## Usage
 
-You will be prompted to enter your OpenAI API key. Then you'll be able to provide a question or task. Using the text-davinci-003 model your question will start at Malkuth, and traverse the ToL with gpt-3.5-turbo now choosing the appropriate Sefira to question. After prompting Keter, a new agent will summarise and look for insights from each sefira, ending with a final reflection using the gpt-3.5-turbo model providing it's final answer.
+You will be prompted to enter your OpenAI API key. Then provide a question or task. Using the text-davinci-003 your question will start at Malkuth, and traverse the ToL with gpt-3.5-turbo now choosing the appropriate Sefira to question. After prompting Keter, a new agent will summarise and look for insights from each sefira, ending with a final reflection providing it's final answer using gpt-3.5-turbo.
 
 ## Current Implementation
 
