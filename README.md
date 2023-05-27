@@ -19,12 +19,12 @@ collections
   
   To install
   
-  `git clone https://github.com/EveryOneIsGross/Sefira.git`
+  `git clone https://github.com/EveryOneIsGross/Sefirot.git`
   
   To run
   
-  `cd Sefira`
-  `python SefiraCHAT.py`
+  `cd Sefirot`
+  `python Sefirot_example.py`
 
 You also need to have an OpenAI API key. 💅
 
