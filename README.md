@@ -34,7 +34,7 @@ To use this project, you need to enter your OpenAI API key when prompted. Then, 
 
 ## Current Implementation
 
-This is very much just a proof of concept that renders ok results and illustrates the concept. Alot of the logic on pathfinding is a placeholder or just messy. Also the prompts and descriptions of the Sefirot are not refined for better output. 
+This is very much just a proof of concept that renders ok results and illustrates the concept. Alot of the logic on pathfinding is a placeholder or just messy. Also the prompts and descriptions of the Sefirot are not well defined. 
 
 ## To do
 
@@ -52,7 +52,7 @@ This is very much just a proof of concept that renders ok results and illustrate
 
 ❌ Improve UI.. make one
 
-✅ Have the final reflection spoken and record it locally as an mp3 for using in your massive drops.
+✅ Have a TTS example that records answers and reflection as mp3 locally.
 
 
 
