@@ -1,10 +1,10 @@
-This project is a chain of thought chatbot that uses the OpenAI API and the concept of sefira on the Tree of Life to generate answers and an enriched summarised reflection for any question. A sefira is one of the 10 attributes or emanations of God in Kabbalah, a form of Jewish mysticism. The chatbot automatically traverses the tree of life asking the same question of each sefirot seeking answers based on their worldview and temprement. Ultimately it reflects on all answers and gives a final answer.
+This project is a chain of thought chatbot that uses OpenAI API and the concept of sefira on the Tree of Life to generate answers and an enriched summarised reflection for any question. A sefira is one of the 10 attributes or emanations of God in Kabbalah, a form of Jewish mysticism. The chatbot automatically traverses the tree of life asking the same question of each sefirot seeking answers based on their worldview and temprement. Ultimately it reflects on all answers and gives a final answer.
 
 ![ToL_diagram](https://github.com/EveryOneIsGross/Sefira/assets/23621140/12184a14-3629-4887-ace3-f40268e97dbf)
 
 ## Relation to Tree of Thought
 
-The tree of thought chain (ToT) is a new framework for language model inference that generalizes over the popular chain of thought (CoT) approach to prompting language models. ToT enables exploration over coherent units of text (thoughts) that serve as intermediate steps toward problem solving. ToT allows language models to perform deliberate decision making by considering multiple different reasoning paths and self-evaluating choices to decide the next course of action, as well as looking ahead or backtracking when necessary to make global choices. This isn't that, but inspired by it and other systems like AutoGPT and BabyAGI.
+The tree of thought chain (ToT) is a new framework for language model inference that generalizes over the popular chain of thought (CoT) approach to prompting language models. ToT enables exploration over coherent units of text (thoughts) that serve as intermediate steps toward problem solving. ToT allows language models to perform deliberate decision making by considering multiple different reasoning paths and self-evaluating choices to decide the next course of action, as well as looking ahead or backtracking when necessary to make global choices. (ToL) isn't that, but inspired by it and other systems like AutoGPT and BabyAGI.
 
 ## Installation
 
