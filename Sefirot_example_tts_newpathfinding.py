@@ -61,10 +61,14 @@ class ChatbotAgent:
         self.definitions = definitions if definitions else {}
 
     def move_to_next_sefira(self, question):
-        # Get only paths that are closer to Keter
+    # Get only paths that are closer to Keter
         possible_paths = [path for path in self.current_sefira.connected_paths if path.tree_level < self.current_sefira.tree_level]
 
         if possible_paths:
+            # Filter out the paths that have been visited before
+            visited_sefirot = [self.previous_sefira, self.penultimate_sefira]
+            possible_paths = [path for path in possible_paths if path not in visited_sefirot]
+
             # Rank the relevance of each possible path based on the question and the attribute of the sefira
             relevance_scores = []
             for path in possible_paths:
@@ -89,12 +93,14 @@ class ChatbotAgent:
             # Choose the most relevant path or use a weighted random selection based on the relevance scores
             # You can adjust this part according to your preference
             try:
-                if max(relevance_scores) > 0.5:
-                    # Choose the most relevant path
+                # Generate a random number between 0 and 1
+                random_number = random.random()
+                if max(relevance_scores) > 0.5 and random_number > 0.2:
+                    # Choose the most relevant path with 80% probability
                     best_index = relevance_scores.index(max(relevance_scores))
                     best_path = possible_paths[best_index]
                 else:
-                    # Use a weighted random selection
+                    # Use a weighted random selection with 20% probability
                     best_path = random.choices(possible_paths, weights=relevance_scores, k=1)[0]
             except ValueError:
                 # If the total of weights is zero or empty, use the older logic
@@ -112,6 +118,7 @@ class ChatbotAgent:
         else:
             # If there are no possible paths, the current sefira becomes None
             self.current_sefira = None
+
 
 
 
@@ -155,38 +162,38 @@ class ChatbotAgent:
         else:
             return ""
 
-def traverse_tree_and_answer(self, question):
-    print(f"Starting at {self.current_sefira.name}...")
-    print("-----------------------------------------")
+    def traverse_tree_and_answer(self, question):
+        print(f"Starting at {self.current_sefira.name}...")
+        print("-----------------------------------------")
 
-    answer = self.answer_question(question)
-    self.responses.append((self.current_sefira.name, answer))
-    self.answers.append(answer)
-    print(f"Current Sefira: {self.current_sefira.name}")
-    print(f"Position on the Path: {self.current_sefira.position}")
-    print(f"Question: {question}")
-    print(f"Answer: {answer}")
-    print("-----------------------------------------")
-
-    while self.current_sefira:
-        self.move_to_next_sefira(question)
         answer = self.answer_question(question)
+        self.responses.append((self.current_sefira.name, answer))
+        self.answers.append(answer)
+        print(f"Current Sefira: {self.current_sefira.name}")
+        print(f"Position on the Path: {self.current_sefira.position}")
+        print(f"Question: {question}")
+        print(f"Answer: {answer}")
+        print("-----------------------------------------")
 
-        if self.current_sefira:
-            self.responses.append((self.current_sefira.name, answer))
-            self.answers.append(answer)
-            print(f"Current Sefira: {self.current_sefira.name}")
-            print(f"Position on the Path: {self.current_sefira.position}")
-            print(f"Question: {question}")
-            print(f"Answer: {answer}")
-            print("-----------------------------------------")
+        while self.current_sefira:
+            self.move_to_next_sefira(question)
+            answer = self.answer_question(question)
 
-    most_walked_path = self.path_counts.most_common(1)[0][0]
-    print(f"Path Walked the Most: {most_walked_path}")
+            if self.current_sefira:
+                self.responses.append((self.current_sefira.name, answer))
+                self.answers.append(answer)
+                print(f"Current Sefira: {self.current_sefira.name}")
+                print(f"Position on the Path: {self.current_sefira.position}")
+                print(f"Question: {question}")
+                print(f"Answer: {answer}")
+                print("-----------------------------------------")
 
-    return self.answers
+        most_walked_path = self.path_counts.most_common(1)[0][0]
+        print(f"Path Walked the Most: {most_walked_path}")
 
-    rank_sefira_relevance = lambda self, sefira, question:attribute_weights.get(sefira.attribute, 0.0)
+        return self.answers
+
+        rank_sefira_relevance = lambda self, sefira, question:attribute_weights.get(sefira.attribute, 0.0)
 
 
 # Prompt the user for the initial question
@@ -212,7 +219,7 @@ reflection_prompt = f"Reflecting '{user_question}' on our journey through the {m
 
 reflection_response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
-    messages=[{"role": "system", "content": "You are an insightful assistant."}, {"role": "user", "content": reflection_prompt }],
+    messages=[{"role": "system", "content": "You are a wise and insightful assistant."}, {"role": "user", "content": reflection_prompt }],
     temperature=0.5,
     max_tokens=300,
     top_p=1,
@@ -220,11 +227,68 @@ reflection_response = openai.ChatCompletion.create(
     presence_penalty=0.6,
 )
 time.sleep(1) # pause for 1 second
-
 reflection = reflection_response.choices[0].message.content.strip()
 
 final_summary = f"{answers_summary}\n\nReflection:\n{reflection}"
 
+# print("Summary of Answers:")
+# print(answers_summary)
+# print("-----------------------------------------")
 print("Reflection:")
 print(reflection)
 print("-----------------------------------------")
+
+engine = pyttsx3.init()
+text = reflection
+engine.setProperty("rate", 150) # Speed percent (can go over 100)
+engine.setProperty("volume", 0.8) # Volume 0-1
+voices = engine.getProperty("voices")
+engine.setProperty("voice", voices[1].id)
+file_name = user_question + ".mp3" # you can change the extension as you like
+engine.save_to_file(text, file_name)
+engine.say(text)
+engine.runAndWait()
+
+# Create a dictionary of sefira names and rate values
+sefira_rates = {
+    "Keter": 130,
+    "Chokhmah": 120,
+    "Binah": 130,
+    "Chesed": 142,
+    "Gevurah": 150,
+    "Tiferet": 130,
+    "Netzach": 180,
+    "Hod": 170,
+    "Yesod": 160,
+    "Malkuth": 190
+}
+
+# Create a dictionary of sefira names and voice ids
+sefira_voices = {
+    "Keter": voices[0].id,
+    "Chokhmah": voices[1].id,
+    "Binah": voices[0].id,
+    "Chesed": voices[0].id,
+    "Gevurah": voices[1].id,
+    "Tiferet": voices[1].id,
+    "Netzach": voices[0].id,
+    "Hod": voices[0].id,
+    "Yesod": voices[1].id,
+    "Malkuth": voices[0].id
+}
+
+# Loop through the responses list, which contains the sefira name and answer for each step
+for sefira_name, answer in chatbot_agent.responses:
+    # Generate a summary for each sefira state
+    summary = f"{answer}"
+    
+    # Set the voice and rate according to the sefira name
+    engine.setProperty("voice", sefira_voices[sefira_name])
+    engine.setProperty("rate", sefira_rates[sefira_name])
+    
+    # Save and play the summary as an mp3 file with sefira name and user question as file name
+    file_name = f"{sefira_name}_{user_question}.mp3"
+    engine.save_to_file(summary, file_name)
+    engine.runAndWait()
+
+

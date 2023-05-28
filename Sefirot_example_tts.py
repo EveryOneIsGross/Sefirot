@@ -4,9 +4,10 @@ import openai
 import random
 import pyttsx3
 from collections import Counter
+from getpass import getpass
 
 # Prompt the user for the OpenAI API key
-api_key = input("Enter your OpenAI API key: ")
+api_key = getpass("Enter your OpenAI API key: ")
 openai.api_key = api_key
 
 # Define constants
