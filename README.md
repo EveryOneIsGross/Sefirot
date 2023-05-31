@@ -42,17 +42,16 @@ This is very much just a proof of concept that renders ok results and illustrate
 
 ✅ Implement a version that walks the path and generates a final reflection
 
-❌ Understand what I am doing
+✅ Understand what I am doing
 
 ❌ Refine individual Sefira temprement, colour, output
 
-❌ Create a better pathfinding logic when choosing best Sefira to consult next
+✅ Create a better pathfinding logic when choosing best Sefira to consult next
 
 ❌ Add more tools such as longterm memory for Sefirot
 
 ❌ Improve UI.. make one
 
-✅ Have a TTS example that records answers and reflection as mp3 locally.
 
 
 
