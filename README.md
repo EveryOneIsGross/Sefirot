@@ -33,7 +33,6 @@ This is very much just a proof of concept that renders ok results and illustrate
 To run this project, you need to have Python 3 installed on your machine. You also need to install the following libraries:
 
 openai
-pyttsx3
 python-dotenv
 concurrent
 
