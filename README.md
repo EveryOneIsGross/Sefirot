@@ -6,28 +6,6 @@ The tree of thought chain (ToT) (https://github.com/kyegomez/tree-of-thoughts) i
 
 ![ToL_diagram](https://github.com/EveryOneIsGross/Sefirot/assets/23621140/beede4de-fad3-4185-8b59-f8ef0c947996)
 
-## Installation
-
-To run this project, you need to have Python 3 installed on your machine. You also need to install the following libraries:
-
-openai
-pyttsx3
-python-dotenv
-concurrent
-
-  `pip install openai python-dotenv concurrent`
-  
-  To install
-  
-  `git clone https://github.com/EveryOneIsGross/Sefirot.git`
-  
-  To run
-  
-  `cd Sefirot`
-  `python Sefirot_example.py`
-
-You also need to update and rename the .env_template to .env and include your OpenAI API key. 💅
-
 ## Usage
 
 You will be prompted to enter your OpenAI API key. Then provide a question or task. Using the text-davinci-003 your question will start at Malkuth, and traverse the ToL with gpt-3.5-turbo now choosing the appropriate Sefira to question. After prompting Keter, a new agent will summarise and look for insights from each sefira, ending with a final reflection providing it's final answer using gpt-3.5-turbo.
@@ -44,17 +22,33 @@ This is very much just a proof of concept that renders ok results and illustrate
 
 ✅ Implement a version that walks the path and generates a final reflection
 
-✅ Understand what I am doing
-
 ❌ Refine individual Sefira temprement, colour, output
-
-✅ Create a better pathfinding logic when choosing best Sefira to consult next
 
 ❌ Add more tools such as longterm memory for Sefirot
 
 ❌ Improve UI.. make one
 
+## Installation
 
+To run this project, you need to have Python 3 installed on your machine. You also need to install the following libraries:
+
+openai
+pyttsx3
+python-dotenv
+concurrent
+
+  `pip install requirements.txt`
+  
+  To install
+  
+  `git clone https://github.com/EveryOneIsGross/Sefirot.git`
+  
+  To run
+  
+  `cd Sefirot`
+  `python Sefirot_example.py`
+
+You also need to update and rename the .env_template to .env and include your OpenAI API key. 💅
 
 
 
