@@ -26,7 +26,7 @@ concurrent
   `cd Sefirot`
   `python Sefirot_example.py`
 
-You also need to have an OpenAI API key. 💅
+You also need to update and rename the .env_template to .env and include your OpenAI API key. 💅
 
 ## Usage
 
