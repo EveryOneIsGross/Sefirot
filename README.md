@@ -11,11 +11,11 @@ The tree of thought chain (ToT) is a new framework for language model inference 
 To run this project, you need to have Python 3 installed on your machine. You also need to install the following libraries:
 
 openai
-random
 pyttsx3
-collections
+python-dotenv
+concurrent
 
-  `pip install openai random pyttsx3 collections`
+  `pip install openai python-dotenv concurrent`
   
   To install
   
