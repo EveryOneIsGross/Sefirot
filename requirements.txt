@@ -1,5 +1,4 @@
 # Install these packages with pip
 openai
-pyttsx3
 python-dotenv
 concurrent
