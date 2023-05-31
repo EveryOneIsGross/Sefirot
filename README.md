@@ -12,7 +12,7 @@ You will be prompted to enter your OpenAI API key. Then provide a question or ta
 
 ## Current Implementation
 
-This script implements a chatbot agent that can answer questions from different perspectives based on the sefirot of the Kabbalah Tree of Life. The chatbot agent traverses the tree from Malkuth (the lowest sefira) to Keter (the highest sefira), generating clarifications and answers along the way. The script uses OpenAI’s GPT-3.5-turbo model to rank the relevance of each sefira, interpret the question, and reflect on the answers. The script also uses a ThreadPoolExecutor to handle multiple API requests concurrently. The script can be used for exploring different worldviews, generating creative insights, and learning about the Kabbalah Tree of Life.
+This script implements a chatbot agent that can answer questions from different perspectives based on the sefirot of the Kabbalah Tree of Life. The chatbot agent traverses the tree from Malkuth (the lowest sefira) to Keter (the highest sefira), generating clarifications and answers along the way. The script uses OpenAI’s GPT-3.5-turbo model to rank the relevance of each sefira, interpret the question, and reflect on the answers. 
 
 This is very much just a proof of concept that renders ok results and illustrates the concept. Alot of the logic on pathfinding is a placeholder or just messy. Also the prompts and descriptions of the Sefirot are not yet well defined. 
 
