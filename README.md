@@ -4,7 +4,7 @@ This project is a chain of thought chatbot that uses OpenAI API and the concept 
 
 The tree of thought chain (ToT) (https://github.com/kyegomez/tree-of-thoughts) is a new framework for language model inference that generalizes over the popular chain of thought (CoT) approach to prompting language models. ToT enables exploration over coherent units of text (thoughts) that serve as intermediate steps toward problem solving. ToT allows language models to perform deliberate decision making by considering multiple different reasoning paths and self-evaluating choices to decide the next course of action, as well as looking ahead or backtracking when necessary to make global choices. (ToL) isn't that, but inspired by it and other systems like AutoGPT (https://github.com/Significant-Gravitas/Auto-GPT) and BabyAGI (https://github.com/yoheinakajima/babyagi). ToL's goal is to instead enrich the answers with lifepath experience, in an attempt to create more holistic and ethically "aligned" answers. 
 
-![ToL_diagram](https://github.com/EveryOneIsGross/Sefirot/assets/23621140/bc7d231b-2fa9-4648-8c05-fa368eb79bce)
+![ToL_diagram](https://github.com/EveryOneIsGross/Sefirot/assets/23621140/beede4de-fad3-4185-8b59-f8ef0c947996)
 
 ## Installation
 
