@@ -1,3 +1,5 @@
+UPDATED FOR SEMANTIC GRAPH NAVIGATION.
+
 This project is a chain of thought chatbot that uses OpenAI API and the concept of sefira on the Tree of Life to generate answers and an enriched summarised reflection for any question. A sefira is one of the 10 attributes or emanations of God in Kabbalah, a form of Jewish mysticism. The chatbot automatically traverses the tree of life asking the same question of each sefirot seeking answers based on their worldview and temprement. Ultimately it reflects on all answers and gives a final answer.
 
 ## Tree of Thought? Tree of Life!
